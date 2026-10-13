@@ -1,3 +1,10 @@
+// Suppress non-critical console logging in production to prevent JS bridge chattering & stutter
+if (!__DEV__) {
+  console.log = () => {};
+  console.info = () => {};
+  console.debug = () => {};
+}
+
 import { registerRootComponent } from 'expo';
 
 import App from './App';
